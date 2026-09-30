@@ -23,3 +23,43 @@ INSERT INTO agenda(id, nome, dt_nasc, telefone, email)
 
 INSERT INTO agenda(id, nome, dt_nasc, telefone, email)
 	values(5,'daniela','05/06/2010','11999993029','daniela@gmail.com');
+
+--listar todos os dados
+select * FROM agenda;
+--boa pratica do select -> escolher colunas que eu quero listar
+select nome, dt_nasc, email
+from agenda
+	
+--classificar/ordenar
+select nome, dt_nasc, email
+	from agenda
+	order by nome asc; --DESC ; --ASC/DESC
+	
+--filtros basico(where)
+select nome, dt_nasc, email
+	from agenda
+where nome = 'ana';
+		
+select nome, dt_nasc, email
+	from agenda
+where nome <> 'ana'; -- diferente ou !=
+
+select nome, dt_nasc, email
+	from agenda
+where dt_nasc > '2005-12-10'; -- maior
+
+--excluir tabela sem a clausula where
+select * from agenda;
+
+delete from agenda;
+		
+-- excluir registros com filtro - *boa pratica
+delete from agenda
+	where id = 1; --sempre com o id
+	
+select * from agenda
+	where id = 1;
+
+--remove da lista os dados duplicados DISTINCT
+select DISTINCT * FROM agenda;
+
