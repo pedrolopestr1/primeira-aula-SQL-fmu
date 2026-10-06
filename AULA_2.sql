@@ -234,4 +234,10 @@ VALUES(40, 'OPERAÇÃO', 'RECIFE', 'PE');
 	
 select * from Departamento;	
 
-  JOIN
+select fun.fun_nome as nome, fun.fun_cargo cargo,
+	   fun.fun_dta_contrato "data de contrato",
+	   fun.fun_salario as salario,
+	   dep.depto_nome as departamento, dep.depto_cidade cidade,
+	   dep.depto_uf UF
+	from   Funcionarios fun
+inner join Departamento dep ON (dep.ID_depto = fun.ID_depto);
