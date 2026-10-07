@@ -241,3 +241,6 @@ select fun.fun_nome as nome, fun.fun_cargo cargo,
 	   dep.depto_uf UF
 	from   Funcionarios fun
 inner join Departamento dep ON (dep.ID_depto = fun.ID_depto);
+	where fun.fun_dta_contrato > '09/12/2004'
+order by fun.fun_nome, fun.fun_cargo;
+
